@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Day Love Letter</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #ff6b9d 0%, #c44569 50%, #f8b500 100%);
+            margin: 0;
+            padding: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #2d1b69;
+        }
+        .letter-container {
+            max-width: 650px;
+            background: rgba(255, 255, 255, 0.97);
+            padding: 60px;
+            border-radius: 25px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid rgba(255, 107, 157, 0.3);
+        }
+        .letter-container::before {
+            content: '❣️ ❣️ ❣️';
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 32px;
+            opacity: 0.7;
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        h1 {
+            color: #d63384;
+            font-size: 32px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            font-weight: bold;
+        }
+        h2.signature {
+            color: #c44569;
+            font-size: 26px;
+            margin-top: 45px;
+            margin-bottom: 25px;
+            font-style: italic;
+        }
+        p {
+            line-height: 1.85;
+            font-size: 19px;
+            margin-bottom: 25px;
+            text-align: left;
+            text-shadow: 1px 1px 1px rgba(255,255,255,0.8);
+        }
+        .hearts {
+            font-size: 28px;
+            margin: 25px 0;
+            animation: heartbeat 1.5s ease-in-out infinite;
+        }
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        /* PHOTO STYLES */
+        .hero-photo {
+            width: 100%; 
+            max-width: 450px; 
+            height: 300px; 
+            object-fit: cover;
+            border-radius: 25px; 
+            margin: 20px 0 30px 0; 
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            border: 4px solid rgba(255,107,157,0.5);
+        }
+        .memory-photos {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin: 25px 0;
+            flex-wrap: wrap;
+        }
+        .memory-photo {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            border: 3px solid rgba(255,107,157,0.6);
+            transition: transform 0.3s ease;
+        }
+        .memory-photo:hover {
+            transform: scale(1.05);
+        }
+        .signature-photo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-top: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            border: 4px solid #d63384;
+        }
+        .music-controls {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 15px 20px;
+            border-radius: 50px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            z-index: 1000;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .music-controls:hover {
+            background: rgba(255, 107, 157, 0.95);
+            color: white;
+        }
+        .play-pause-btn {
+            background: #d63384;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            font-size: 16px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s;
+        }
+        .play-pause-btn:hover {
+            background: #c44569;
+        }
+        .name-signature {
+            font-size: 18px;
+            margin-top: 30px;
+            color: #d63384;
+            font-style: italic;
+            font-weight: bold;
+        }
+        @media (max-width: 600px) {
+            body { padding: 20px; }
+            .letter-container { padding: 40px 30px; }
+            p { font-size: 17px; line-height: 1.7; }
+            h1 { font-size: 26px; }
+            .memory-photos { flex-direction: column; align-items: center; }
+            .memory-photo { width: 100px; height: 100px; }
+        }
+    </style>
+</head>
+<body>
+    <button class="music-controls" onclick="toggleMusic()">
+        <button class="play-pause-btn" id="playPauseBtn">▶️</button>
+        <span id="musicStatus">Play "Love The Hell Out Of You" - Lewis Capaldi</span>
+    </button>
+
+    <div class="letter-container">
+        <h1>To My One & Only Everything</h1>
+        
+        <!-- 🎨 HERO PHOTO - Put your BEST couple photo here -->
+        <img src="us-together.jpg" alt="You and me forever" class="hero-photo">
+        
+        <p>Happy Valentine's Day, My Everything!</p>
+        
+        <div class="hearts">❣️ ❣️ ❣️</div>
+        
+        <p>We have Love, Respect, Care & Everything and that's what I want to keep at all times. My everything, It's been a very well journey for us and I'm lovin' every single second of it—</p>
+        
+        <!-- 📸 MEMORY PHOTOS - Your Matchong Goto + 7/11 sisig pics -->
+        <div class="memory-photos">
+            <img src="matchong-goto.jpg" alt="Matchong Goto dates" class="memory-photo">
+            <img src="sisig-rice.jpg" alt="7/11 sisig rice love" class="memory-photo">
+            <img src="us-eating.jpg" alt="Our foodie moments" class="memory-photo">
+        </div>
+        
+        <p>especially those times we eat after school, whether it's Matchong Goto, or the sisig rice from 7/11 or everything that we surely enjoyed because of the love that we have for each other. We may have some misunderstanding and all, but we never let anything of that gets in what really build us up, and it is our genuine love to each other; the care and respect always find its way to us.</p>
+        
+        <div class="hearts">❣️ ❣️ ❣️</div>
+        
+        <p>I love you so much with all my heart, my darling, you are my shining beacon that always find its way to guide me through everything. I really and genuinely appreciate you and everything that you are doing for me, for this relationship, for us and I. You made me feel wonderful always, and I am overflowing with love everyday with you. I love you so much.</p>
+        
+        <div class="hearts">❣️ ❣️ ❣️</div>
+        
+        <p>Let's keep holding on our love and everything that builds us, my darling. That's what make us strong and love each other more. No matter what this world throw, I promise you that I will always choose to love and keep us strong, I'll keep choosing you, my love. I love you so very much.</p>
+        
+        <p>You will always be mine, you are my love of my life.</p>
+        
+        <!-- 💕 SIGNATURE SELFIE -->
+        <img src="our-selfie.jpg" alt="Forever together" class="signature-photo">
+        
+        <h2 class="signature">Happiest Valentine's Day Of Love & Everything To Us, My Forever I Love You So Much ❣️</h2>
+        
+        <p class="name-signature">Yours forever,<br>Your Everything</p>
+    </div>
+
+    <!-- 🎵 MUSIC - Your MP3 file -->
+    <audio id="bgMusic" loop preload="auto">
+        <source src="LoveTheHellOutOfYou.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        const audio = document.getElementById('bgMusic');
+        const playPauseBtn = document.getElementById('playPauseBtn');
+        const musicStatus = document.getElementById('musicStatus');
+        let isPlaying = false;
+
+        function toggleMusic() {
+            if (isPlaying) {
+                audio.pause();
+                playPauseBtn.textContent = '▶️';
+                musicStatus.textContent = 'Play "Love The Hell Out Of You" - Lewis Capaldi';
+            } else {
+                audio.play().catch(e => {
+                    alert('Click play button first to enable audio!');
+                });
+                playPauseBtn.textContent = '⏸️';
+                musicStatus.textContent = 'Playing "Love The Hell Out Of You"';
+            }
+            isPlaying = !isPlaying;
+        }
+    </script>
+</body>
+</html>
